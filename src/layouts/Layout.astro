@@ -1,9 +1,10 @@
 ---
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
+import  "@fontsource-variable/onest";
 
 interface Props {
-	description: string;
-	title: string;
+  description: string;
+  title: string;
 }
 
 const { description, title } = Astro.props;
@@ -11,26 +12,40 @@ const { description, title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	:root {
-		color-scheme: dark;
-	}
+  :root {
+    color-scheme: dark;
+  }
 
-	html {
-		font-family: system-ui, sans-serif;
-		background: #111e31;
-	}
+  html {
+    font-family: 'Onest Variable', system-ui, sans-serif;
+    background: #151a36;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 24px;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+  }
+
+  p b {
+	color: white;
+	font-weight: 600;
+  }
 </style>
